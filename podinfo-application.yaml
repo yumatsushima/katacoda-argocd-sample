@@ -16,7 +16,7 @@ spec:
       allowEmpty: false
   source:
     repoURL: https://stefanprodan.github.io/podinfo
-    targetRevision: 6.0.3
+    targetRevision: 5.2.1
     chart: podinfo
     helm:
       values: |
