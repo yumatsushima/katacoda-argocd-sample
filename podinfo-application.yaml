@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+  name: podinfo
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+  source:
+    repoURL: https://stefanprodan.github.io/podinfo
+    targetRevision: 6.0.3
+    chart: podinfo
+    helm:
+      values: |
+        replicaCount: 1
+        image:
+          tag: 6.0.3
+        ui:
+          color: "#34577c"
+          message: "Hello!"
