@@ -25,4 +25,4 @@ spec:
           tag: 6.0.3
         ui:
           color: "#34577c"
-          message: "Hello! World!"
+          message: "Hello! New World!"
